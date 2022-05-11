@@ -45,13 +45,13 @@ function setup() {
     r = 255;
     g = 109;
     b = 18;
-    a = 25;
+    a = 100;
 
     cnv.mousePressed(canvasPressed);
 }
 
 function draw() {
-    text('Du son, du son !', 20, 20);
+    text('Essaie de cliquer sur la toile...', 20, 20);
 
     if (mouseIsPressed) {
         fill(r,g,b,a);
@@ -81,15 +81,15 @@ function pressedPlay(sound) {
     if (sound.isPlaying()) {
         // .isPlaying() returns a boolean
         sound.stop();
-        r = 255;
-        g = 109;
-        b = 18;
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
     } else {
         sound.play();
         sound.loop();
-        r = 28;
-        g = 148;
-        b = 139;
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
     }
 }
 
